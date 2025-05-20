@@ -3,7 +3,7 @@ import { authService } from "./auth.module.js";
 
 const router = Router();
 
-router.post("/register", authService.register);
+// Removed public registration route
 router.post("/login", authService.login);
 
 export default router;

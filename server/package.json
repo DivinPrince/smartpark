@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --watch src --watch .env.local --ext js,json,env --exec node src/app.js"
+    "dev": "nodemon --watch src --watch .env.local --ext js,json,env --exec node src/app.js",
+    "seed": "node src/db/seed.js"
   },
   "author": "",
   "license": "ISC",

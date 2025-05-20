@@ -4,7 +4,6 @@ import MainLayout from './layouts/MainLayout';
 import ProtectedRoute from './components/ProtectedRoute';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import Register from './pages/Register';
 import Departments from './pages/Departments';
 import Employees from './pages/Employees';
 import Salaries from './pages/Salaries';
@@ -18,7 +17,6 @@ function App() {
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
             <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
             
             {/* Protected routes */}
             <Route element={<ProtectedRoute />}>

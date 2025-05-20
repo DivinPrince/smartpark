@@ -33,22 +33,6 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // Register function
-  const register = async (name, email, password) => {
-    try {
-      setIsLoading(true);
-      setError(null);
-      const response = await authService.register(name, email, password);
-      setUser(response.user);
-      return response;
-    } catch (error) {
-      setError(error.response?.data?.message || 'Registration failed');
-      throw error;
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   // Logout function
   const logout = () => {
     authService.logout();
@@ -63,7 +47,6 @@ export const AuthProvider = ({ children }) => {
         error,
         isAuthenticated: !!user,
         login,
-        register,
         logout
       }}
     >
