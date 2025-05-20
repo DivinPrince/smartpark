@@ -23,11 +23,13 @@ export const requireAdmin = async (req, res, next) => {
       where: eq(users.id, decoded.id)
     });
     
-    if (user.email !== 'admin@gmail.com') {
-      return res.status(401).json({ message: 'Access denied: Admin privileges required' });
-    }
     if (!user) {
       return res.status(401).json({ message: 'Invalid user' });
+    }
+    
+    // Check if the user is an admin
+    if (user.email !== 'admin@gmail.com') {
+      return res.status(403).json({ message: 'Access denied: Admin privileges required' });
     }
     
     // Add user info to request

@@ -39,7 +39,12 @@ This project is a full-stack employee management application with React frontend
    npx drizzle-kit push
    ```
 
-6. Start the server:
+6. Seed the database with admin user and sample data:
+   ```
+   npm run seed
+   ```
+
+7. Start the server:
    ```
    npm run dev
    ```
@@ -65,16 +70,27 @@ The server will run on http://localhost:3000
 
 The frontend will run on http://localhost:5173
 
+## Admin Authentication
+
+This system uses admin-based authentication. There is no public registration - only administrators can access the system.
+
+### Default Admin Credentials
+- Email: admin@example.com (or admin@gmail.com as configured in middleware)
+- Password: admin123
+
+To add additional administrators, you can modify the seed script or add directly to the database.
+
 ## Features
 
-- User authentication with JWT
+- Admin-only authentication with JWT
 - Department management
 - Employee management
 - Salary tracking
+- Secure access control
 
 ## Database Schema
 
-- Users: Authentication and user management
+- Users: Authentication and administrator management
 - Department: Company departments with salary information
 - Employee: Employee details linked to departments
 - Salary: Salary calculations with deductions and net salary
@@ -82,11 +98,11 @@ The frontend will run on http://localhost:5173
 ## API Endpoints
 
 The backend provides RESTful API endpoints for:
-- User authentication (login/register)
-- Department CRUD operations
-- Employee CRUD operations
-- Salary management
-- Reports
+- Admin authentication (login)
+- Department CRUD operations (admin access only)
+- Employee CRUD operations (admin access only)
+- Salary management (admin access only)
+- Reports (admin access only)
 
 ## Technologies Used
 

@@ -11,7 +11,7 @@ const router = Router();
 // Public routes
 router.use("/auth", authRoutes);
 
-// Protected routes that require authentication
+// Protected routes that require admin privileges
 router.use("/departments", requireAdmin, departmentRoutes);
 router.use("/employees", requireAdmin, employeeRoutes);
 router.use("/salaries", requireAdmin, salaryRoutes);
